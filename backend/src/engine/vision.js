@@ -5,13 +5,14 @@
  */
 
 export function parseVisualTelemetry(imageMetadata = {}, imageBase64OrUrl = '') {
-  const fileName = imageMetadata.filename || imageMetadata.name || 'monitoring_chart.png';
-  const isGrafana = /grafana|datadog|chart|dashboard|metric|latency/i.test(fileName);
-  const isHardware = /hardware|rack|cable|server|board|switch/i.test(fileName);
+  const fileName = (imageMetadata.filename || imageMetadata.name || 'monitoring_chart.png').toLowerCase();
+  const isGrafana = /grafana|datadog|chart|dashboard|metric|latency|prometheus|apm|outage/i.test(fileName);
+  const isHardware = /hardware|rack|cable|switch|transceiver|fiber/i.test(fileName) && !isGrafana;
 
   if (isHardware) {
     return {
       visualType: 'HARDWARE_DIAGNOSTIC',
+      detectedSource: 'Datacenter Hardware Diagnostic (Switch Rack)',
       detectedComponent: 'Fiber SFP+ Module / Switch Port 4',
       anomalySummary: 'Visual thermal discoloration and disconnected optical transceiver clip detected.',
       extractedMetrics: [
@@ -26,8 +27,8 @@ export function parseVisualTelemetry(imageMetadata = {}, imageBase64OrUrl = '') 
   // Default: Grafana / Datadog dashboard chart parsing
   return {
     visualType: 'MONITORING_DASHBOARD_CHART',
-    detectedSource: isGrafana ? 'Grafana APM / Prometheus Dashboard' : 'Datadog Service Health Overview',
-    anomalySummary: 'Sharp 84% throughput cliff drop detected at 10:14:30 AM UTC, accompanied by a 650% spike in HTTP 504 Gateway Timeouts.',
+    detectedSource: /datadog/i.test(fileName) ? 'Datadog Service Health Overview' : 'Grafana APM / Prometheus Dashboard',
+    anomalySummary: 'Sharp 84.8% throughput cliff drop detected at 10:14:30 AM UTC, accompanied by a 650% spike in HTTP 504 Gateway Timeouts.',
     extractedMetrics: [
       { label: 'RPS (Requests Per Second)', before: '14,200 req/s', after: '2,150 req/s', dropPct: '84.8% cliff' },
       { label: 'P99 Latency', before: '45 ms', after: '4,850 ms', status: 'SEVERE_SPIKE' },
