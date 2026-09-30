@@ -1,0 +1,392 @@
+{
+  "meta": {
+    "provider": "OSMDataProvider",
+    "source": "OpenStreetMap (Hyderabad)",
+    "is_demo": true,
+    "license": "ODbL 1.0 - demo data synthesised for local development",
+    "note": "SYNTHETIC DEMO DATA. Road/intersection topology follows the real Hyderabad network, but traffic attributes (volume, speed, congestion) are demo estimates for local testing. Replace with a live OSM export plus real traffic telemetry for production."
+  },
+  "localities": [
+    {
+      "id": "osm-hitec-madhapur",
+      "name": "HITEC City / Madhapur",
+      "lat": 17.4465,
+      "lng": 78.3852,
+      "roads": [
+        {
+          "segment_id": "HMC-R01",
+          "name": "HITEC City Main Road",
+          "highway": "primary",
+          "lanes": 4,
+          "length_m": 2400,
+          "geometry": [[17.4512, 78.3724], [17.4461, 78.3820], [17.4420, 78.3885]],
+          "traffic_volume_vph": 5200,
+          "capacity_vph": 3000,
+          "avg_speed_kmh": 14,
+          "free_flow_kmh": 55,
+          "v_c_ratio": 1.73,
+          "congestion_index": 0.88,
+          "peak_hours": ["08:00-11:00", "17:00-21:00"]
+        },
+        {
+          "segment_id": "HMC-R02",
+          "name": "Cyber Towers Road",
+          "highway": "secondary",
+          "lanes": 3,
+          "length_m": 1600,
+          "geometry": [[17.4444, 78.3842], [17.4410, 78.3901]],
+          "traffic_volume_vph": 3450,
+          "capacity_vph": 2400,
+          "avg_speed_kmh": 17,
+          "free_flow_kmh": 45,
+          "v_c_ratio": 1.44,
+          "congestion_index": 0.74,
+          "peak_hours": ["08:30-10:30", "17:30-20:00"]
+        },
+        {
+          "segment_id": "HMC-R03",
+          "name": "Inorbit Mall Bypass Road",
+          "highway": "tertiary",
+          "lanes": 2,
+          "length_m": 1100,
+          "geometry": [[17.4468, 78.3785], [17.4496, 78.3847]],
+          "traffic_volume_vph": 2100,
+          "capacity_vph": 1800,
+          "avg_speed_kmh": 22,
+          "free_flow_kmh": 40,
+          "v_c_ratio": 1.17,
+          "congestion_index": 0.55,
+          "peak_hours": ["09:00-11:00", "18:00-20:30"]
+        },
+        {
+          "segment_id": "HMC-R04",
+          "name": "Madhapur Main Road",
+          "highway": "primary",
+          "lanes": 4,
+          "length_m": 1900,
+          "geometry": [[17.4461, 78.3820], [17.4526, 78.3920]],
+          "traffic_volume_vph": 4850,
+          "capacity_vph": 3000,
+          "avg_speed_kmh": 15,
+          "free_flow_kmh": 50,
+          "v_c_ratio": 1.62,
+          "congestion_index": 0.83,
+          "peak_hours": ["08:00-11:00", "17:00-21:00"]
+        }
+      ],
+      "intersections": [
+        {
+          "id": "HMC-I01",
+          "name": "Inorbit Mall Junction",
+          "lat": 17.4496,
+          "lng": 78.3847,
+          "type": "signalized",
+          "approaches": 4,
+          "congestion_rating": 0.91,
+          "signal_cycle_s": 180,
+          "average_delay_s": 145,
+          "note": "Long queue spillback onto HITEC City Main Road"
+        },
+        {
+          "id": "HMC-I02",
+          "name": "Cyber Towers Junction",
+          "lat": 17.4444,
+          "lng": 78.3842,
+          "type": "signalized",
+          "approaches": 4,
+          "congestion_rating": 0.78,
+          "signal_cycle_s": 160,
+          "average_delay_s": 95,
+          "note": "Heavy right-turn movement toward Gachibowli"
+        },
+        {
+          "id": "HMC-I03",
+          "name": "Madhapur X Road",
+          "lat": 17.4526,
+          "lng": 78.3920,
+          "type": "signalized",
+          "approaches": 3,
+          "congestion_rating": 0.72,
+          "signal_cycle_s": 150,
+          "average_delay_s": 80,
+          "note": "Mixed pedestrian crossing demand"
+        }
+      ],
+      "traffic_metrics": {
+        "peak_volume_vph": 5200,
+        "network_capacity_vph": 15000,
+        "avg_network_speed_kmh": 15,
+        "congestion_level": "very_high",
+        "bottleneck_segments": ["HMC-R01", "HMC-R04"],
+        "bottleneck_intersections": ["HMC-I01"]
+      }
+    },
+    {
+      "id": "osm-gachibowli",
+      "name": "Gachibowli",
+      "lat": 17.4401,
+      "lng": 78.3489,
+      "roads": [
+        {
+          "segment_id": "GB-R01",
+          "name": "Gachibowli – Miyapur Road",
+          "highway": "primary",
+          "lanes": 6,
+          "length_m": 3400,
+          "geometry": [[17.4401, 78.3489], [17.4590, 78.3540]],
+          "traffic_volume_vph": 6100,
+          "capacity_vph": 4200,
+          "avg_speed_kmh": 21,
+          "free_flow_kmh": 60,
+          "v_c_ratio": 1.45,
+          "congestion_index": 0.76,
+          "peak_hours": ["08:00-11:00", "17:30-21:00"]
+        },
+        {
+          "segment_id": "GB-R02",
+          "name": "Financial District Road",
+          "highway": "secondary",
+          "lanes": 4,
+          "length_m": 2600,
+          "geometry": [[17.4401, 78.3489], [17.4300, 78.3470]],
+          "traffic_volume_vph": 3900,
+          "capacity_vph": 3000,
+          "avg_speed_kmh": 26,
+          "free_flow_kmh": 50,
+          "v_c_ratio": 1.3,
+          "congestion_index": 0.62,
+          "peak_hours": ["08:30-10:30", "17:30-20:00"]
+        },
+        {
+          "segment_id": "GB-R03",
+          "name": "Gachibowli Inner Ring Road",
+          "highway": "tertiary",
+          "lanes": 4,
+          "length_m": 2100,
+          "geometry": [[17.4401, 78.3489], [17.4450, 78.3440]],
+          "traffic_volume_vph": 2700,
+          "capacity_vph": 3000,
+          "avg_speed_kmh": 34,
+          "free_flow_kmh": 45,
+          "v_c_ratio": 0.9,
+          "congestion_index": 0.4,
+          "peak_hours": ["09:00-11:00", "18:00-20:00"]
+        }
+      ],
+      "intersections": [
+        {
+          "id": "GB-I01",
+          "name": "Gachibowli Junction",
+          "lat": 17.4401,
+          "lng": 78.3489,
+          "type": "signalized",
+          "approaches": 6,
+          "congestion_rating": 0.85,
+          "signal_cycle_s": 190,
+          "average_delay_s": 130,
+          "note": "Six-arm junction with long inter-green clearance; buses and autos queue"
+        },
+        {
+          "id": "GB-I02",
+          "name": "Durgam Cheruvu Metro Junction",
+          "lat": 17.4435,
+          "lng": 78.3908,
+          "type": "signalized",
+          "approaches": 4,
+          "congestion_rating": 0.6,
+          "signal_cycle_s": 140,
+          "average_delay_s": 65,
+          "note": "Near metro rail station, moderate"
+        }
+      ],
+      "traffic_metrics": {
+        "peak_volume_vph": 6100,
+        "network_capacity_vph": 16000,
+        "avg_network_speed_kmh": 23,
+        "congestion_level": "high",
+        "bottleneck_segments": ["GB-R01"],
+        "bottleneck_intersections": ["GB-I01"]
+      }
+    },
+    {
+      "id": "osm-kukatpally",
+      "name": "Kukatpally",
+      "lat": 17.4948,
+      "lng": 78.4126,
+      "roads": [
+        {
+          "segment_id": "KP-R01",
+          "name": "KPHB – Kukatpally Main Road",
+          "highway": "primary",
+          "lanes": 6,
+          "length_m": 4200,
+          "geometry": [[17.4948, 78.4126], [17.4770, 78.4150]],
+          "traffic_volume_vph": 5800,
+          "capacity_vph": 4200,
+          "avg_speed_kmh": 19,
+          "free_flow_kmh": 55,
+          "v_c_ratio": 1.38,
+          "congestion_index": 0.72,
+          "peak_hours": ["08:00-10:30", "17:30-20:30"]
+        }
+      ],
+      "intersections": [
+        {
+          "id": "KP-I01",
+          "name": "Kukatpally Bus Depot Junction",
+          "lat": 17.4948,
+          "lng": 78.4126,
+          "type": "signalized",
+          "approaches": 4,
+          "congestion_rating": 0.78,
+          "signal_cycle_s": 170,
+          "average_delay_s": 105,
+          "note": "Bus depot entry conflicts with through traffic"
+        }
+      ],
+      "traffic_metrics": {
+        "peak_volume_vph": 5800,
+        "network_capacity_vph": 14000,
+        "avg_network_speed_kmh": 19,
+        "congestion_level": "high",
+        "bottleneck_segments": ["KP-R01"],
+        "bottleneck_intersections": ["KP-I01"]
+      }
+    },
+    {
+      "id": "osm-begumpet",
+      "name": "Begumpet",
+      "lat": 17.4408,
+      "lng": 78.4743,
+      "roads": [
+        {
+          "segment_id": "BP-R01",
+          "name": "Begumpet – Punjagutta Road",
+          "highway": "primary",
+          "lanes": 4,
+          "length_m": 2800,
+          "geometry": [[17.4408, 78.4743], [17.4290, 78.4660]],
+          "traffic_volume_vph": 4700,
+          "capacity_vph": 3000,
+          "avg_speed_kmh": 22,
+          "free_flow_kmh": 50,
+          "v_c_ratio": 1.57,
+          "congestion_index": 0.8,
+          "peak_hours": ["08:00-10:30", "17:30-20:30"]
+        }
+      ],
+      "intersections": [
+        {
+          "id": "BP-I01",
+          "name": "Greenlands Junction",
+          "lat": 17.4352,
+          "lng": 78.4690,
+          "type": "signalized",
+          "approaches": 5,
+          "congestion_rating": 0.82,
+          "signal_cycle_s": 175,
+          "average_delay_s": 120,
+          "note": "Near Rail Nilayam, heavy rail commuter flow"
+        }
+      ],
+      "traffic_metrics": {
+        "peak_volume_vph": 4700,
+        "network_capacity_vph": 12000,
+        "avg_network_speed_kmh": 22,
+        "congestion_level": "high",
+        "bottleneck_segments": ["BP-R01"],
+        "bottleneck_intersections": ["BP-I01"]
+      }
+    },
+    {
+      "id": "osm-secunderabad",
+      "name": "Secunderabad",
+      "lat": 17.4399,
+      "lng": 78.4983,
+      "roads": [
+        {
+          "segment_id": "SB-R01",
+          "name": "M.G. Road Secunderabad",
+          "highway": "primary",
+          "lanes": 4,
+          "length_m": 2200,
+          "geometry": [[17.4399, 78.4983], [17.4360, 78.5080]],
+          "traffic_volume_vph": 5100,
+          "capacity_vph": 3000,
+          "avg_speed_kmh": 16,
+          "free_flow_kmh": 50,
+          "v_c_ratio": 1.7,
+          "congestion_index": 0.86,
+          "peak_hours": ["08:00-10:30", "17:30-20:30"]
+        }
+      ],
+      "intersections": [
+        {
+          "id": "SB-I01",
+          "name": "JBS Parade Ground Junction",
+          "lat": 17.4411,
+          "lng": 78.5009,
+          "type": "signalized",
+          "approaches": 4,
+          "congestion_rating": 0.88,
+          "signal_cycle_s": 180,
+          "average_delay_s": 150,
+          "note": "Railway station access and bus terminus conflicts"
+        }
+      ],
+      "traffic_metrics": {
+        "peak_volume_vph": 5100,
+        "network_capacity_vph": 13000,
+        "avg_network_speed_kmh": 16,
+        "congestion_level": "very_high",
+        "bottleneck_segments": ["SB-R01"],
+        "bottleneck_intersections": ["SB-I01"]
+      }
+    },
+    {
+      "id": "osm-charminar",
+      "name": "Charminar",
+      "lat": 17.3616,
+      "lng": 78.4747,
+      "roads": [
+        {
+          "segment_id": "CM-R01",
+          "name": "Charminar – Shah Ali Banda Road",
+          "highway": "residential",
+          "lanes": 2,
+          "length_m": 3000,
+          "geometry": [[17.3616, 78.4747], [17.3600, 78.4690]],
+          "traffic_volume_vph": 1100,
+          "capacity_vph": 1100,
+          "avg_speed_kmh": 12,
+          "free_flow_kmh": 30,
+          "v_c_ratio": 1.0,
+          "congestion_index": 0.6,
+          "peak_hours": ["10:00-13:00", "16:00-20:00"]
+        }
+      ],
+      "intersections": [
+        {
+          "id": "CM-I01",
+          "name": "Charminar Junction",
+          "lat": 17.3616,
+          "lng": 78.4747,
+          "type": "uncontrolled",
+          "approaches": 5,
+          "congestion_rating": 0.55,
+          "signal_cycle_s": 0,
+          "average_delay_s": 60,
+          "note": "Heritage zone; historically dense mixed streets"
+        }
+      ],
+      "traffic_metrics": {
+        "peak_volume_vph": 1100,
+        "network_capacity_vph": 3000,
+        "avg_network_speed_kmh": 12,
+        "congestion_level": "moderate",
+        "bottleneck_segments": [],
+        "bottleneck_intersections": []
+      }
+    }
+  ]
+}
