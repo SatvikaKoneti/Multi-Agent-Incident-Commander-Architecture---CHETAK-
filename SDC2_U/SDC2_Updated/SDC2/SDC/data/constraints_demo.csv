@@ -1,0 +1,11 @@
+authority_code,type,description,value,is_demo
+GHMC,budget,Annual sectoral intervention budget for a locality programme,45000000,true
+HMDA,spatial,Heritage and development-control restrictions apply near Charminar precinct,restricted,true
+HMDA,spatial,Metropolitan Regional Development Plan growth corridors prioritise public transport investments,public_transport_priority,true
+TSPCB,environmental,Ambient AQ standards must not degrade below CPCB national ambient air quality standards,naaqs,true
+TSSPDCL,utility,Feeder work requires a shutdown window and coordination with distribution planning,8h_window,true
+HMWSSB,utility,Any trenching near water mains requires joint survey and surface restoration,joint_survey,true
+HTP,traffic,Signal modifications require careful timing during non-peak and minimal lane closure,non_peak_only,true
+GHMC,timeline,Local civic works should be completed within one financial year where possible,12_months,true
+HMDA,land,Land availability for new depot/substation requires statutory land-use conversion,needs_conversion,true
+GHMC,environmental,Tree removal requires GHMC Arboriculture approval and compensatory planting,compensatory,true

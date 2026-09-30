@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "provider": "UrbanObservatoryDataProvider",
+    "source": "Hyderabad Urban Observatory (GHMC geo-spatial data platform)",
+    "is_demo": true,
+    "note": "SYNTHETIC DEMO DATA representing the intended Hyderabad Urban Observatory schema (GIS layers, infrastructure, amenities). Replace with official Urban Observatory exports/APIs for production."
+  },
+  "localities": [
+    {
+      "locality_id": "osm-hitec-madhapur",
+      "name": "HITEC City / Madhapur",
+      "population": 145000,
+      "area_sqkm": 14.2,
+      "land_use": {
+        "commercial_pct": 38,
+        "residential_pct": 44,
+        "institutional_pct": 10,
+        "green_pct": 4,
+        "transport_pct": 4
+      },
+      "amenities": [
+        {"type": "IT_office", "name": "Cyber Towers / Cyber Gateway", "count": 42},
+        {"type": "metro_station", "name": "HITEC City Metro", "count": 1},
+        {"type": "hospital", "name": "Apollo / Medicover", "count": 3},
+        {"type": "school", "name": "Public schools cluster", "count": 8},
+        {"type": "shopping_mall", "name": "Inorbit Mall", "count": 2},
+        {"type": "park", "name": "Neighbourhood parks", "count": 6}
+      ],
+      "infrastructure": [
+        {"asset_type": "street_light", "name": "LED street lighting (partial)", "status": "functional", "details": "Older sodium lamps on 38% of network"},
+        {"asset_type": "footpath", "name": "Footpaths along main roads", "status": "inadequate", "details": "Missing/encroached on ~45% of major roads"},
+        {"asset_type": "storm_drain", "name": "Storm water drains", "status": "waterlogged", "details": "Water logging spots after heavy rain near Madhapur X Road"},
+        {"asset_type": "bus_stop", "name": "TSRTC / Metro feeder stops", "status": "functional", "details": "11 bus stops, average headway ~12 min during peak"}
+      ]
+    },
+    {
+      "locality_id": "osm-gachibowli",
+      "name": "Gachibowli",
+      "population": 210000,
+      "area_sqkm": 18.5,
+      "land_use": {
+        "commercial_pct": 32,
+        "residential_pct": 46,
+        "institutional_pct": 9,
+        "green_pct": 6,
+        "transport_pct": 7
+      },
+      "amenities": [
+        {"type": "IT_office", "name": "Financial District towers", "count": 64},
+        {"type": "university", "name": "IIIT / UoH campus belt", "count": 3},
+        {"type": "hospital", "name": "Multi-speciality hospitals", "count": 4},
+        {"type": "shopping_mall", "name": "Mall clusters", "count": 2},
+        {"type": "lake", "name": "Durgam Cheruvu", "count": 1},
+        {"type": "park", "name": "Public parks", "count": 9}
+      ],
+      "infrastructure": [
+        {"asset_type": "distribution_feeder", "name": "Gachibowli 33/11 kV substation feeders", "status": "overloaded", "details": "Feeder GB-1101 peaking near installed capacity; repeated interruptions"},
+        {"asset_type": "street_light", "name": "LED street lighting", "status": "functional", "details": "Modern LED network present"},
+        {"asset_type": "footpath", "name": "Footpaths", "status": "partial", "details": "Good on Financial District, missing on service roads"},
+        {"asset_type": "metro_station", "name": "Metro accessibility", "status": "functional", "details": "Durgam Cheruvu station within reach"}
+      ]
+    },
+    {
+      "locality_id": "osm-kukatpally",
+      "name": "Kukatpally",
+      "population": 330000,
+      "area_sqkm": 24.0,
+      "land_use": {
+        "commercial_pct": 22,
+        "residential_pct": 62,
+        "institutional_pct": 6,
+        "green_pct": 5,
+        "transport_pct": 5
+      },
+      "amenities": [
+        {"type": "hospital", "name": "Professor Jayashankar stadium area clinics", "count": 6},
+        {"type": "school", "name": "Schools", "count": 15},
+        {"type": "bus_depot", "name": "Kukatpally Bus Depot", "count": 1},
+        {"type": "park", "name": "Parks", "count": 4}
+      ],
+      "infrastructure": [
+        {"asset_type": "street_light", "name": "Street lighting", "status": "partial", "details": "Some stretches dark"},
+        {"asset_type": "water", "name": "HMWSSB supply lines", "status": "intermittent", "details": "Intermittent supply in pockets"}
+      ]
+    },
+    {
+      "locality_id": "osm-begumpet",
+      "name": "Begumpet",
+      "population": 120000,
+      "area_sqkm": 9.8,
+      "land_use": {
+        "commercial_pct": 30,
+        "residential_pct": 55,
+        "institutional_pct": 8,
+        "green_pct": 4,
+        "transport_pct": 3
+      },
+      "amenities": [
+        {"type": "railway", "name": "Begumpet Railway Station", "count": 1},
+        {"type": "hospital", "name": "Hospitals", "count": 3},
+        {"type": "school", "name": "Schools", "count": 9},
+        {"type": "park", "name": "Parks", "count": 5}
+      ],
+      "infrastructure": [
+        {"asset_type": "road_flyover", "name": "Begumpet flyover approach", "status": "congested", "details": "Approach roads to Greenlands congested at peak"}
+      ]
+    },
+    {
+      "locality_id": "osm-secunderabad",
+      "name": "Secunderabad",
+      "population": 260000,
+      "area_sqkm": 21.0,
+      "land_use": {
+        "commercial_pct": 26,
+        "residential_pct": 58,
+        "institutional_pct": 7,
+        "green_pct": 5,
+        "transport_pct": 4
+      },
+      "amenities": [
+        {"type": "railway", "name": "Secunderabad Junction", "count": 1},
+        {"type": "bus_terminus", "name": "JBS", "count": 1},
+        {"type": "market", "name": "M.G. Road market", "count": 1},
+        {"type": "hospital", "name": "Railway hospital", "count": 1}
+      ],
+      "infrastructure": [
+        {"asset_type": "railway_level", "name": "Level crossings / subways", "status": "congested", "details": "Parade Ground junction congestion at peak"}
+      ]
+    },
+    {
+      "locality_id": "osm-charminar",
+      "name": "Charminar",
+      "population": 310000,
+      "area_sqkm": 16.4,
+      "land_use": {
+        "commercial_pct": 30,
+        "residential_pct": 60,
+        "institutional_pct": 4,
+        "green_pct": 2,
+        "transport_pct": 4
+      },
+      "amenities": [
+        {"type": "heritage", "name": "Charminar monument", "count": 1},
+        {"type": "market", "name": "Laad Bazaar / Gulzar Houz market", "count": 2},
+        {"type": "mosque", "name": "Mecca Masjid", "count": 1},
+        {"type": "hospital", "name": "Osmania General Hospital", "count": 1}
+      ],
+      "infrastructure": [
+        {"asset_type": "heritage", "name": "Heritage zone constraints", "status": "restricted", "details": "Height/construction restrictions near monument"},
+        {"asset_type": "waste", "name": "Door-to-door waste collection", "status": "stretched", "details": "Market waste generation is high and collection bins overflow"}
+      ]
+    }
+  ]
+}
