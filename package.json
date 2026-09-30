@@ -1,11 +1,13 @@
 {
   "name": "chetak-incident-commander",
   "version": "1.0.0",
-  "description": "CHETAK: Multi-Agent Incident Commander (MAIC)",
+  "description": "CHETAK: Multi-Agent Incident Commander (MAIC - Statement ID: PNG2)",
   "type": "module",
   "scripts": {
-    "start": "node SDC2_U/SDC2_Updated/SDC2/SDC/backend/src/server.js",
-    "dev": "node SDC2_U/SDC2_Updated/SDC2/SDC/backend/src/server.js",
-    "test": "npm --prefix SDC2_U/SDC2_Updated/SDC2/SDC/backend test"
+    "start": "node backend/src/server.js",
+    "dev": "node backend/src/server.js",
+    "build:frontend": "npm --prefix frontend run build",
+    "build": "npm --prefix frontend run build",
+    "test": "npm --prefix backend test"
   }
 }

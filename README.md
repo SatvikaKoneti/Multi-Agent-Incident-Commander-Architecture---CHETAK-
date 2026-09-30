@@ -69,12 +69,16 @@ cd Multi-Agent-Incident-Commander-Architecture---CHETAK-
 ```
 
 ### 2. Launch the Application
-Double-click `START_CHETAK.bat` or run:
+Double-click `START_CHETAK.bat` (Windows) or run:
 
 ```bash
-# Start Backend API & War Room
-cd SDC2_U/SDC2_Updated/SDC2/SDC/backend
+# 1. Start Backend & Built Mission Control War Room
 npm start
+```
+Or run directly:
+```bash
+cd backend
+node src/server.js
 ```
 Open **[http://localhost:4000](http://localhost:4000)** in your browser.
 

@@ -1,9 +1,0 @@
-feeder_id,locality,feeder_name,peak_demand_mw,installed_capacity_mw,utilization_pct,interruption_hours_30d,consumers_count,avg_outage_min,recorded_month,is_demo
-GB-1101,Gachibowli,Gachibowli Financial District Feeder,48.5,52,93.27,27.5,18400,38,2026-09,true
-GB-1102,Gachibowli,Gachibowli Housing Feeder,31.2,40,78.0,12.0,12200,21,2026-09,true
-HMC-2201,HITEC City / Madhapur,HITEC City Commercial Feeder,36.8,36,102.22,9.5,14200,18,2026-09,true
-KUK-1101,Kukatpally,KPHB Residential Feeder,42.6,50,85.2,16.0,28200,29,2026-09,true
-BP-2201,Begumpet,Begumpet Mixed Feeder,24.1,30,80.33,8.0,9800,15,2026-09,true
-SEC-1101,Secunderabad,Secunderabad Station Feeder,33.9,40,84.75,18.5,15600,34,2026-09,true
-CHA-1101,Charminar,Charminar Old City Feeder,29.4,35,84.0,22.0,21400,41,2026-09,true
-MIY-1101,Miyapur,Miyapur Township Feeder,28.7,35,82.0,11.0,19300,20,2026-09,true

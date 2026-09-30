@@ -1,9 +1,0 @@
-authority_code,name,domain,responsibility,jurisdiction,contact_method,simulated_endpoint,active
-HTP,Hyderabad Traffic Police,Traffic and transportation,"Traffic management, signal operations, enforcement, incident response",Hyderabad city,HTP sim portal,/api/sim/authority/htp,true
-GHMC,Greater Hyderabad Municipal Corporation,Urban infrastructure and civic services,"Urban infrastructure, roads, drainage, sanitation, public works",Hyderabad city,GHMC sim portal,/api/sim/authority/ghmc,true
-HMDA,Hyderabad Metropolitan Development Authority,Metropolitan planning,"Master plan, land use, development control",Hyderabad Metropolitan Region,HMDA sim portal,/api/sim/authority/hmda,true
-TSPCB,Telangana State Pollution Control Board,Environment and pollution,"Air quality regulation, emission inventory, environmental compliance",Telangana,TSPCB sim portal,/api/sim/authority/tspcb,true
-HMWSSB,Hyderabad Metropolitan Water Supply and Sewerage Board,Water and sewerage,"Water supply, sewerage networks, leakage management",Hyderabad city,HMWSSB sim portal,/api/sim/authority/hmwssb,true
-TSSPDCL,Telangana State Southern Power Distribution Company Ltd,Electricity distribution,"Power distribution, feeder loading, transformer capacity, outages","GHMC + surrounding districts",TSSPDCL sim portal,/api/sim/authority/tsspdcl,true
-TSRTC,Telangana State Road Transport Corporation,Public transport,"Bus services, metro feeder operations, scheduling","telangana-wide",TSRTC sim portal,/api/sim/authority/tsrtc,true
-GHMC-SWM,GHMC Solid Waste Management,Waste management,"Door-to-door collection, bins, transfer stations, processing",Hyderabad city,GHMC SWM sim portal,/api/sim/authority/ghmc-swm,true

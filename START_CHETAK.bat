@@ -5,7 +5,6 @@ echo    CHETAK: MULTI-AGENT INCIDENT COMMANDER (STATEMENT ID: PNG2)
 echo    Detect. Alert. Act. - Autonomous Advisory SRE Co-Pilot
 echo =======================================================================
 echo.
-<<<<<<< HEAD
 
 :: Automatically free port 4000 if an old instance was left running
 for /f "tokens=5" %%a in ('netstat -aon ^| findstr ":4000" ^| findstr "LISTENING"') do (
@@ -16,10 +15,8 @@ echo Starting Backend API ^& Mission Control War Room...
 echo Backend Server: http://localhost:4000
 echo.
 
-if exist "%~dp0SDC2_U\SDC2_Updated\SDC2\SDC\backend" (
-    cd /d "%~dp0SDC2_U\SDC2_Updated\SDC2\SDC\backend"
-) else if exist "%~dp0NRCM\NRCM\NRCM\NRCM\backend" (
-    cd /d "%~dp0NRCM\NRCM\NRCM\NRCM\backend"
+if exist "%~dp0backend" (
+    cd /d "%~dp0backend"
 ) else (
     echo Error: Could not locate backend directory!
     pause
@@ -29,11 +26,5 @@ if exist "%~dp0SDC2_U\SDC2_Updated\SDC2\SDC\backend" (
 :: Automatically launch the browser after the server spins up
 start "" cmd /c "timeout /t 2 /nobreak >nul & start http://localhost:4000"
 
-=======
-echo Starting Backend API & Mission Control War Room...
-echo Backend Server: http://localhost:4000
-echo.
-cd /d "%~dp0SDC2_U\SDC2_Updated\SDC2\SDC\backend"
->>>>>>> 71568d94ef3de656b278c2f5bf0894c889cd83a3
 node src/server.js
 pause
