@@ -240,4 +240,81 @@ router.post('/:id/resolve', (req, res) => {
   }
 });
 
+// 8. Interactive Guardrail Command Sandbox Evaluator (Try-to-Break-It Sandbox)
+router.post('/eval-command', (req, res) => {
+  try {
+    const { command } = req.body;
+    const safety = validateCommandSafety(command || '');
+    res.json({
+      ok: true,
+      command,
+      safetyTier: safety.safetyTier,
+      allowed: safety.allowed,
+      requiresApproval: safety.requiresHumanApproval || false,
+      reason: safety.reason,
+      dryRunPrediction: safety.dryRunPrediction,
+      timestamp: new Date().toISOString()
+    });
+  } catch (err) {
+    res.status(500).json({ ok: false, error: err.message });
+  }
+});
+
+// 9. Custom Incident Playground Ingestion
+router.post('/custom-ingest', (req, res) => {
+  try {
+    const { title, service, rawLogs, severity, financialImpactPerMin } = req.body;
+    const incidentTitle = title || 'Custom Incident Telemetry Stream';
+    const incidentService = service || 'custom-microservice';
+    const trackingId = `INC-${Date.now().toString().slice(-6)}`;
+
+    const sanitized = sanitizeAndInspectTelemetry(rawLogs || '');
+
+    const entropyResult = calculateAlertEntropy(
+      Array.from({ length: 150 }, (_, i) => ({
+        service: incidentService,
+        errorType: i % 2 === 0 ? 'Custom Unhandled Exception' : 'Downstream Dependency Spike',
+        title: incidentTitle
+      }))
+    );
+
+    const swarmResult = runAdversarialSwarmDebate({
+      title: incidentTitle,
+      service: incidentService,
+      summary: sanitized.sanitized.slice(0, 150) || 'Custom log stream anomaly detected',
+      telemetry: [
+        { streamType: 'LOG', source: 'custom-logger', payload: sanitized.sanitized.slice(0, 300), timestamp: new Date().toLocaleTimeString() }
+      ]
+    });
+
+    res.json({
+      ok: true,
+      custom: true,
+      incident: {
+        id: Date.now(),
+        tracking_id: trackingId,
+        title: incidentTitle,
+        service: incidentService,
+        severity: severity || 'P1',
+        status: 'INVESTIGATING',
+        patient_zero_service: `${incidentService} (Detected Origin)`,
+        blast_radius_index: 72,
+        financial_impact_per_min: financialImpactPerMin || 24000,
+        currency: 'INR',
+        raw_alert_count: 150,
+        correlated_signal_count: 2,
+        noise_reduction_pct: 98.7,
+        confidence_score: 0.95
+      },
+      entropy: entropyResult,
+      swarm: swarmResult,
+      debates: swarmResult.debates,
+      guardrailProposals: swarmResult.guardrailProposals,
+      historicalMatch: swarmResult.historicalMatch
+    });
+  } catch (err) {
+    res.status(500).json({ ok: false, error: err.message });
+  }
+});
+
 export default router;
