@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import ChetakWarRoom from './views/ChetakWarRoom';
 import ChetakLandingPage from './views/ChetakLandingPage';
@@ -47,6 +48,15 @@ export default function App() {
       ) : (
         <ChetakWarRoom onBackToLanding={navigateToLanding} initialScenarioId={selectedScenario} />
       )}
+=======
+import React, { useState } from 'react';
+import ChetakWarRoom from './views/ChetakWarRoom';
+
+export default function App() {
+  return (
+    <div className="w-full min-h-screen bg-slate-950">
+      <ChetakWarRoom />
+>>>>>>> 71568d94ef3de656b278c2f5bf0894c889cd83a3
     </div>
   );
 }
