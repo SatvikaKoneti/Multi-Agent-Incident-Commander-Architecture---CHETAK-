@@ -176,22 +176,47 @@ export default function ChetakWarRoom() {
     }
   };
 
-  const triggerVisionUpload = () => {
-    setVisionMode(true);
-    setVisionData({
-      visualType: 'MONITORING_DASHBOARD_CHART',
-      detectedSource: 'Grafana / Prometheus Dashboard (Grafana_APM_Payment.png)',
-      anomalySummary: 'Sharp 84.8% throughput cliff drop detected at 10:14:30 AM UTC accompanied by a 650% spike in P99 latency.',
-      extractedMetrics: [
-        { label: 'RPS (Throughput)', before: '14,200 req/s', after: '2,150 req/s', dropPct: '84.8% cliff' },
-        { label: 'P99 Latency', before: '45 ms', after: '4,850 ms', status: 'SEVERE_SPIKE' },
-        { label: 'DB Connection Saturation', before: '42 / 100', after: '100 / 100 (Max Capacity)', status: 'EXHAUSTED' }
-      ],
-      ocrExtractedLogs: [
-        '[10:14:32] ERROR pool-worker-12: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections',
-        '[10:14:35] WARN upstream-gateway: 504 Gateway Timeout while proxying request to /api/v1/checkout/process'
-      ]
-    });
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      const base64 = e.target?.result as string;
+      setPreviewImage(base64);
+      setVisionMode(true);
+      setLoading(true);
+
+      try {
+        const res = await fetch('/api/incidents/vision-parse', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            imageMetadata: {
+              name: file.name,
+              size: file.size,
+              type: file.type
+            },
+            imageBase64: base64
+          })
+        });
+        const data = await res.json();
+        if (data.ok) {
+          setVisionData(data.vision);
+        }
+      } catch (err) {
+        console.error('Vision AI parse failed:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const triggerFileInput = () => {
+    document.getElementById('vision-file-input')?.click();
   };
 
   return (
@@ -283,12 +308,19 @@ export default function ChetakWarRoom() {
         </div>
 
         <div className="flex items-center space-x-2">
+          <input
+            id="vision-file-input"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={handleImageUpload}
+          />
           <button
-            onClick={triggerVisionUpload}
-            className="text-xs px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600/40 transition flex items-center space-x-1.5"
+            onClick={triggerFileInput}
+            className="text-xs px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600/40 transition flex items-center space-x-1.5 cursor-pointer shadow-sm"
           >
             <Eye className="h-3.5 w-3.5 text-indigo-400" />
-            <span>Drop Grafana Screenshot (Vision AI)</span>
+            <span>Upload Grafana/Chart Screenshot</span>
           </button>
 
           {incident && incident.status !== 'RESOLVED' && (
@@ -349,6 +381,12 @@ export default function ChetakWarRoom() {
                   96% CONFIDENCE
                 </span>
               </div>
+
+              {previewImage && (
+                <div className="mb-3 rounded-lg overflow-hidden border border-slate-800 bg-slate-950">
+                  <img src={previewImage} alt="Uploaded Telemetry Chart" className="w-full h-32 object-cover" />
+                </div>
+              )}
 
               <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 text-xs space-y-2 mb-3">
                 <div className="font-semibold text-slate-200">{visionData.detectedSource}</div>
