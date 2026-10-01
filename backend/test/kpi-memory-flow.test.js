@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import '../test-helpers/init-env.js';
 import { bootTestServer, closeTestServer, api, login } from '../test-helpers/helpers.js';
 
-const { recordKpi } = await import('../src/engine/kpi.js');
+const { recordKpi } = await import('../src/engine/KpiMetricsCalculator.js');
 
 let server;
 let base;

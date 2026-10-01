@@ -1,12 +1,12 @@
-import { OSMDataProvider, LiveOSMDataProvider } from './osm.js';
-import { UrbanObservatoryDataProvider, LiveUrbanObservatoryDataProvider } from './urbanObservatory.js';
-import { AirQualityDataProvider, LiveAirQualityDataProvider } from './airQuality.js';
-import { CostDataProvider, LiveCostDataProvider } from './cost.js';
-import { EnergyDataProvider, LiveEnergyDataProvider } from './energy.js';
-import { CitizenComplaintDataProvider, LiveCitizenComplaintDataProvider } from './citizenComplaint.js';
-import { AuthorityDataProvider, LiveAuthorityDataProvider } from './authority.js';
-import { ConstraintDataProvider, LiveConstraintDataProvider } from './constraints.js';
-import { AuthorityContactDataProvider } from './authorityContact.js';
+import { OSMDataProvider, LiveOSMDataProvider } from './openStreetMapTopologyProvider.js';
+import { UrbanObservatoryDataProvider, LiveUrbanObservatoryDataProvider } from './urbanObservatoryTelemetryProvider.js';
+import { AirQualityDataProvider, LiveAirQualityDataProvider } from './airQualityTelemetryProvider.js';
+import { CostDataProvider, LiveCostDataProvider } from './financialCostEstimatorProvider.js';
+import { EnergyDataProvider, LiveEnergyDataProvider } from './smartGridEnergyTelemetryProvider.js';
+import { CitizenComplaintDataProvider, LiveCitizenComplaintDataProvider } from './citizenComplaintTelemetryProvider.js';
+import { AuthorityDataProvider, LiveAuthorityDataProvider } from './municipalAuthorityTelemetryProvider.js';
+import { ConstraintDataProvider, LiveConstraintDataProvider } from './systemConstraintsTelemetryProvider.js';
+import { AuthorityContactDataProvider } from './authorityContactRegistryProvider.js';
 
 /**
  * Provider registry. Demo implementations are used by default so the system

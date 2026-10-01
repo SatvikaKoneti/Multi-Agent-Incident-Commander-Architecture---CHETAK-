@@ -4,13 +4,13 @@ import express from 'express';
 import cors from 'cors';
 import { config } from './config.js';
 import { AppError } from './utils/index.js';
-import authRoutes from './routes/auth.js';
-import complaintRoutes from './routes/complaints.js';
-import plannerRoutes from './routes/planner.js';
-import authorityRoutes from './routes/authority.js';
-import metaRoutes from './routes/meta.js';
-import uploadRoutes from './routes/uploads.js';
-import incidentRoutes from './routes/incidents.js';
+import authRoutes from './routes/authenticationRoutes.js';
+import complaintRoutes from './routes/citizenComplaintRoutes.js';
+import plannerRoutes from './routes/incidentPlannerRoutes.js';
+import authorityRoutes from './routes/incidentAuthorityRoutes.js';
+import metaRoutes from './routes/systemMetaRoutes.js';
+import uploadRoutes from './routes/fileUploadRoutes.js';
+import incidentRoutes from './routes/incidentCommanderRoutes.js';
 
 export function createApp() {
   const app = express();

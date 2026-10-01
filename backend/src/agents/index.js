@@ -1,14 +1,14 @@
-export { runCoordinator, AGENT_CATALOG } from './coordinator.js';
-export { runTrafficAgent } from './traffic.js';
-export { runPollutionAgent } from './pollution.js';
-export { runEnergyAgent } from './energy.js';
-export { runFusionAgent } from './fusion.js';
-export { runRecommendationAgent } from './recommendation.js';
-export { runClarificationAgent } from './clarification.js';
-export { runAuthorityRequestAgent } from './authorityRequest.js';
-export { ingestAuthorityResponse, runRefinementAgent } from './refinement.js';
-export { runMemoryAgent, formatMemoryHints } from './memory.js';
-export { classifyComplaint, saveClassification } from './classifier.js';
+export { runCoordinator, AGENT_CATALOG } from './IncidentWorkflowCoordinatorAgent.js';
+export { runTrafficAgent } from './UrbanTransitTrafficSpecialistAgent.js';
+export { runPollutionAgent } from './EnvironmentalPollutionSpecialistAgent.js';
+export { runEnergyAgent } from './SmartGridTelemetrySpecialistAgent.js';
+export { runFusionAgent } from './TelemetryEvidenceFusionAgent.js';
+export { runRecommendationAgent } from './RemediationRecommendationAgent.js';
+export { runClarificationAgent } from './IncidentClarificationInquiryAgent.js';
+export { runAuthorityRequestAgent } from './AuthorityDispatchActionAgent.js';
+export { ingestAuthorityResponse, runRefinementAgent } from './RecommendationRefinementAgent.js';
+export { runMemoryAgent, formatMemoryHints } from './HistoricalIncidentMemoryAgent.js';
+export { classifyComplaint, saveClassification } from './IncidentComplaintClassifierAgent.js';
 
 export const AGENTS = {
   coordinator: 'coordinator',

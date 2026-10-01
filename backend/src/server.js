@@ -1,6 +1,6 @@
 import { config } from './config.js';
 import { initDatabase } from './db/index.js';
-import { initRagIfNeeded } from './rag/init.js';
+import { initRagIfNeeded } from './rag/ragKnowledgeBaseInitializer.js';
 import { seedDatabase } from './seed/index.js';
 import { createApp } from './app.js';
 

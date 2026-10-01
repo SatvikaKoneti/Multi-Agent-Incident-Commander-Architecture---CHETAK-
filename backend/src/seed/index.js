@@ -1,8 +1,8 @@
 import { initDatabase } from '../db/index.js';
 import { openDatabase, run, get } from '../db/engine.js';
-import { readCsv, readJson } from '../providers/loader.js';
-import { initRagIfNeeded } from '../rag/init.js';
-import { findOrCreateDemoUsers } from '../services/auth.js';
+import { readCsv, readJson } from '../providers/telemetryDataLoaderProvider.js';
+import { initRagIfNeeded } from '../rag/ragKnowledgeBaseInitializer.js';
+import { findOrCreateDemoUsers } from '../services/userAuthenticationService.js';
 
 export async function seedDatabase({ force = false, withRag = true } = {}) {
   await initDatabase();

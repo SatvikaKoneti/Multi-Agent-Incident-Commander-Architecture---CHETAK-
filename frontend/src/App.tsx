@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ChetakWarRoom from './views/ChetakWarRoom';
-import ChetakLandingPage from './views/ChetakLandingPage';
+import ChetakWarRoom from './views/ChetakWarRoomMissionControl';
+import ChetakLandingPage from './views/ChetakIncidentCommanderLanding';
 
 export default function App() {
   const [selectedScenario, setSelectedScenario] = useState<string>('SCENARIO_DB_COLLAPSE');

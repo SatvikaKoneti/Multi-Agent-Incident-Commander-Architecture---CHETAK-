@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 
 import '../test-helpers/init-env.js';
 
-const { estimateCost, formatCostInr } = await import('../src/engine/costs.js');
-const { applyConstraints } = await import('../src/engine/constraints.js');
+const { estimateCost, formatCostInr } = await import('../src/engine/FinancialLossCostCalculator.js');
+const { applyConstraints } = await import('../src/engine/InfrastructureConstraintChecker.js');
 const { providerRegistry } = await import('../src/providers/index.js');
 
 test('cost engine totals components with 8% overhead and INR formatting', () => {

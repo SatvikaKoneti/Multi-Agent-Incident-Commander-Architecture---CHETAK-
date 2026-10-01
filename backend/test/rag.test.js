@@ -11,8 +11,8 @@ before(async () => {
   run = db.run;
 });
 
-const { getStore, resetStore, retrieve, indexMemory, retrieveMemory, asEvidence, formatContext, indexKnowledge } = await import('../src/rag/retriever.js');
-const { buildKnowledgeChunks } = await import('../src/rag/knowledgeBase.js');
+const { getStore, resetStore, retrieve, indexMemory, retrieveMemory, asEvidence, formatContext, indexKnowledge } = await import('../src/rag/ragSemanticRetriever.js');
+const { buildKnowledgeChunks } = await import('../src/rag/ragKnowledgeBaseStore.js');
 
 function addChunk({ id, topic, text, sourceLabel, isDemo }) {
   getStore().add({

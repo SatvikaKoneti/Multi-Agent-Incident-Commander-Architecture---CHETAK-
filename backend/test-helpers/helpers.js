@@ -1,7 +1,7 @@
 export async function bootTestServer() {
   const { initDatabase } = await import('../src/db/index.js');
   const { seedDatabase } = await import('../src/seed/index.js');
-  const { initRagIfNeeded } = await import('../src/rag/init.js');
+  const { initRagIfNeeded } = await import('../src/rag/ragKnowledgeBaseInitializer.js');
   const { createApp } = await import('../src/app.js');
   const { setAI } = await import('../src/di.js');
   const { FakeAIProvider } = await import('../src/ai/fake.js');

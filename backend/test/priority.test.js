@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 
 import '../test-helpers/init-env.js';
 
-const { computePriority, priorityLevel } = await import('../src/engine/priority.js');
+const { computePriority, priorityLevel } = await import('../src/engine/IncidentPriorityRanker.js');
 
 test('priority score uses the exact mandated weights', () => {
   // 30% severity + 25% population + 20% environment + 15% urgency + 10% feasibility
